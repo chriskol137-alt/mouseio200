@@ -1,4 +1,5 @@
 <!--  σκρολάρισμα πάνω - κάτω και λειτουργίες -->
+
 window.addEventListener('DOMContentLoaded', () => {
     let scrollPos = 0;
     const mainNav = document.getElementById('mainNav');
@@ -24,21 +25,25 @@ window.addEventListener('DOMContentLoaded', () => {
     });
 })
 
-<!--  Εδώ μπαίνει η λειτουργία για το βελάκι -->
+// Κουμπί back to the top
+let mybutton = document.getElementById("backToTopBtn");
 
-        const topBtn = document.getElementById("backToTopBtn");
-        
-        // Εμφάνιση/Κρύψιμο κουμπιού στο σκρολάρισμα
-        window.onscroll = function() {
-            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-                topBtn.style.display = "block";
-            } else {
-                topBtn.style.display = "none";
-            }
-        };
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
 
-        // Όταν το πατάς, σε πάει πάνω ομαλά
-        topBtn.addEventListener("click", function() {
-            window.scrollTo({ top: 0, behavior: "smooth" });
-        });
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}
+
+
   
