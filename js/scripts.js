@@ -25,6 +25,9 @@ window.addEventListener('DOMContentLoaded', () => {
     });
 })
 
+
+
+
 // Κουμπί back to the top
 let mybutton = document.getElementById("backToTopBtn");
 
